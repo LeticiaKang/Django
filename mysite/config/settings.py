@@ -95,9 +95,14 @@ DATABASES = {
         "PASSWORD" : "happyhappy1",
         "HOST" : "localhost",
         "PORT" : "1521",
-    }
+    },
+    # If you plan to run Django in a multithreaded environment ,
+    # then you must set the threaded option of your Oracle database configuration to True:
+    # 'OPTIONS': {
+    #     'threaded': True,
+    #     'use_returning_into': False,
+    # },
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

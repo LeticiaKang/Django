@@ -9,3 +9,9 @@
  - 질문 클래스와 답변 클래스를 만든다
  - 각각의 속성들의 필드를 설정한다.
 
+3. python manage.py makemigrations 을 터미널에서 실행 - 변동사항을 따로 관리
+4. python manage.py sqlmigrate pybo 0001 은 실행된 쿼리문이 뭔지 확인할 수 있음(해도 되고 안해도 됨)
+5. python manage.py migrate DB에 을 터미널에서 실행 - 변동사항 적용
+6. 오라클 user을 보면 테이블이 만들어졌다.
+
+
