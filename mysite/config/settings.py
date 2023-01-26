@@ -29,12 +29,14 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-# 이 애플리케이션들은 일반적인 경우에 사용하기 편리하도록 기본 제공된다.
 INSTALLED_APPS = [
+    # 로그인 · 로그아웃을 "공통 기능을 가진 앱을 등록
+    'common.apps.CommonConfig',
+
     "pybo.apps.PyboConfig",
-    # 관리용 사이트 ( 곧 사용 예정 )
+    # 관리용 사이트
     "django.contrib.admin",
-    # 인증 시스템
+    # 인증 시스템 / 로그인 등
     "django.contrib.auth",
     # 컨텐츠 타입을 위한 프레임워크
     "django.contrib.contenttypes",
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     # 정적 파일을 관리하는 프레임워크
     "django.contrib.staticfiles",
 ]
+# 이 애플리케이션들은 일반적인 경우에 사용하기 편리하도록 기본 제공된다.
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -92,9 +95,9 @@ DATABASES = {
     # # 나는 오라클을 연동할거닷
     "default": {
         "ENGINE": "django.db.backends.oracle",
-        "NAME" : "system",
-        "USER" : "system",
-        "PASSWORD" : "happyhappy1",
+        "NAME" : "C##HAPPY",
+        "USER" : "C##HAPPY",
+        "PASSWORD" : "happy",
         "HOST" : "localhost",
         "PORT" : "1521",
     },
@@ -153,3 +156,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# 로그인 성공후 이동하는 URL
+LOGIN_REDIRECT_URL = '/'
+
+# 로그아웃시 이동하는 URL
+LOGOUT_REDIRECT_URL = '/'

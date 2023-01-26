@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -13,7 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="08900371-c998-4857-a2ae-75d9664fa319">
-      <console name="Connection" type="STANDARD" schema="SYSTEM" session="Main"><![CDATA[select*FROM BOARD ;
+      <console name="Connection" type="STANDARD" schema="SYSTEM" session="Main"><![CDATA[SELECT*FROM BOARD ;
 
 INSERT INTO BOARD VALUES (1, '테스트용', '홍길동', '테스트 중입니다.', TO_DATE(SYSDATE,'YYYY-MM-DD'), 0);
 
@@ -25,6 +25,20 @@ SELECT * FROM DBA_USERS;]]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="08900371-c998-4857-a2ae-75d9664fa319" dataset="SYSTEM.BOARD" active-filter-id="b7561225-9401-4210-91a8-b7d31884a647">
+      <filter id="b7561225-9401-4210-91a8-b7d31884a647" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="NUM" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="08900371-c998-4857-a2ae-75d9664fa319" dataset="SYSTEM.AUTH_USER" active-filter-id="" />
+    <filter-actions connection-id="08900371-c998-4857-a2ae-75d9664fa319" dataset="SYSTEM.PYBO_ANSWER" active-filter-id="" />
+    <filter-actions connection-id="08900371-c998-4857-a2ae-75d9664fa319" dataset="SYSTEM.PYBO_QUESTION" active-filter-id="f8cccca1-116c-4849-aa50-4bf45168fb6b">
+      <filter id="f8cccca1-116c-4849-aa50-4bf45168fb6b" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="ID" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
@@ -54,7 +68,7 @@ SELECT * FROM DBA_USERS;]]></console>
           <deprecated-pwd value="aGFwcHloYXBweTE=" />
         </database>
         <properties>
-          <auto-commit value="false" />
+          <auto-commit value="true" />
         </properties>
         <ssh-settings>
           <active value="false" />
@@ -76,7 +90,7 @@ SELECT * FROM DBA_USERS;]]></console>
           <charset value="UTF-8" />
           <session-management value="true" />
           <ddl-file-binding value="true" />
-          <database-logging value="true" />
+          <database-logging value="false" />
           <connect-automatically value="true" />
           <restore-workspace value="true" />
           <restore-workspace-deep value="false" />

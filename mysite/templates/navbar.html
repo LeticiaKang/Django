@@ -1,0 +1,44 @@
+<!-- 네비게이션바 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'pybo:index' %}">Pybo</a>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <!-- 로그인 폼 -->
+                <li class="nav-item">
+
+                    <!-- 현재 사용자가 로그인 되었는지를 판별 -->
+                    {% if user.is_authenticated %}
+
+                    <!-- 로그인이 되어있는 상태면 로그아웃 표시 -->
+                    <a class="nav-link" href="{% url 'common:logout' %}">{{ user.username }} (로그아웃)</a>
+
+                    {% else %}
+                    <!-- 로그인이 안되어 있으면 로그인 표시 -->
+                    <a class="nav-link" href="{% url 'common:login' %}">로그인</a>
+
+                    {% endif %}
+                </li>
+
+                <!-- 회원가입 폼 -->
+                <li>
+                    <!-- user.is_authenticated
+                       : 현재 사용자가 인증되었는지 여부 (로그인한 상태라면 true, 로그아웃 상태라면 false) -->
+                    {% if not user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'common:signup' %}">회원가입</a>
+                    {% endif %}
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
