@@ -92,15 +92,25 @@ DATABASES = {
     #     "NAME": BASE_DIR / "db.sqlite3",
     # }
 
-    # # 나는 오라클을 연동할거닷
+    # # # 나는 오라클을 연동할거닷
+    # "default": {
+    #     "ENGINE": "django.db.backends.oracle",
+    #     "NAME" : "C##HAPPY",
+    #     "USER" : "C##HAPPY",
+    #     "PASSWORD" : "happy",
+    #     "HOST" : "localhost",
+    #     "PORT" : "1521",
+    # },
+
     "default": {
-        "ENGINE": "django.db.backends.oracle",
-        "NAME" : "C##HAPPY",
-        "USER" : "C##HAPPY",
-        "PASSWORD" : "happy",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME" : "mysite",
+        "USER" : "root",
+        "PASSWORD" : "1q2w3e4r!",
         "HOST" : "localhost",
-        "PORT" : "1521",
+        "PORT" : "3306",
     },
+
     # If you plan to run Django in a multithreaded environment ,
     # then you must set the threaded option of your Oracle database configuration to True:
     # 'OPTIONS': {
